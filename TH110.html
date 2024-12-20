@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    RED.nodes.registerType('TH110',{
+        category: 'Schneider Electric',
+        color: '#009E4D',
+        defaults: {
+            name: {value:""},
+            unitId: {value: "",required:true},
+            data: {value: "", required: true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "schneider.png",
+        label: function() {
+            return this.name||"TH110";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="TH110">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-unitId"><i class="icon-tag"></i> Unit ID</label>
+        <input type="text" id="node-input-unitId" placeholder="123">
+    </div>
+    <div class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="Device internal temperature">Device internal temperature</option>
+           <option value="Device Name">Device Name</option>
+           <option value="Communication status">Communication status</option>
+           <option value="Temperature value">Temperature value</option>
+           <option value="Product ID of the Panel Server">Product ID of the Panel Server</option>
+           <option value="Commercial reference of the Panel Server">Commercial reference of the Panel Server</option>
+           <option value="Serial number of the Panel Server">Serial number of the Panel Server</option>
+           <option value="Product model of the Panel Server">Product model of the Panel Server</option>
+           <option value="Vendor name">Vendor name</option>
+           <option value="Firmware revision">Firmware revision</option>
+           <option value="RSSI">RSSI</option>
+           <option value="LQI">LQI</option>
+           <option value="Wireless device RF-Id">Wireless device RF-Id</option>
+       </select>
+   </div>
+</script>
+
+<script type="text/x-red" data-help-name="TH110">
+    <p>This node resumes the configuration parameters that are necessary to poll a Schneider TH110 series over Modbus TCP/IP. To use this node:<br>1. Enter modbus unit ID.<br>2. Select which reading you'd like to measure.<br>3. Add more nodes to select additional data.</p>
+</script>

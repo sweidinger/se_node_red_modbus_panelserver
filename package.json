@@ -1,0 +1,17 @@
+{
+    "name": "se-node-red-modbus-panelserver",
+    "version": "1.1.3",
+    "description": "Node-RED node for Schneider Electric Modbus PanelServer",
+    "main": "panelserver.js",
+    "author": "Stefan Weidinger",
+    "license": "MIT",
+    "node-red": {
+        "nodes": {
+            "PanelServer": "panelserver.js",
+            "TH110": "TH110.js"
+        }
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}

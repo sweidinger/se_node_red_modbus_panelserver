@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('PanelServer',{
+        category: 'Schneider Electric',
+        color: '#009E4D',
+        defaults: {
+            name: {value:""},
+            unitId: {value: "",required:true},
+            data: {value: "", required: true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "schneider.png",
+        label: function() {
+            return this.name||"PanelServer";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="PanelServer">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-unitId"><i class="icon-tag"></i> Unit ID</label>
+        <input type="text" id="node-input-unitId" placeholder=" 123">
+    </div>
+    <div class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="Product range">Product range</option>
+           <option value="Product family">Product family</option>
+           <option value="Vendor URL">Vendor URL</option>
+           <option value="Commercial Reference">Commercial Reference</option>
+           <option value="Hardware Version">Hardware Version</option>
+           <option value="Serial number">Serial number</option>
+           <option value="Firmware Version">Firmware Version</option>
+           <option value="Health State">Health State</option>
+       </select>
+   </div>
+  
+</script>
+
+<script type="text/x-red" data-help-name="PanelServer">
+    <p>This node resumes the configuration parameters that are necessary to poll a Schneider PanelServer series over Modbus TCP/IP. To use this node:<br>1. Enter modbus unit ID.<br>2. Select which reading you'd like to measure.<br>3. Add more node to select more data.</p>
+</script>
